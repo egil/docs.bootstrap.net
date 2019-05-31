@@ -30,4 +30,4 @@ steps:
     zipAfterPublish: false
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publishing Build Artifacts'        
+  displayName: 'Publishing Build Artifacts'
