@@ -1,14 +1,8 @@
-﻿@using Egil.RazorComponents.Bootstrap.Documentation.Pages.Layout.Examples
-@page "/docs/layout/grid"
+﻿@page "/docs/4.3/layout/grid"
 
-<h1 class="display-1" id="content">Grid system</h1>
-<p class="lead">
+<DocHead Title="Grid system" RelatedBootstrapDoc="4.3/layout/grid/">
     Use our powerful mobile-first flexbox grid to build layouts of all shapes and sizes thanks to a twelve column system, five default responsive tiers, Sass variables and mixins, and dozens of predefined classes/options.
-</p>
-<p class="alert alert-info" role="alert">
-    <em>All relevant examples to Boostrap.NET</em> and related text is based off of <a href="https://getbootstrap.com/docs/4.3/layout/grid/">Bootstrap's own related documentation</a>.
-    Read Bootstrap's documentation for more details on the inner workings of Bootstrap and other non Boostrap.NET options related to this section.
-</p>
+</DocHead>
 
 <Example File=@typeof(EqualWidthGrid1) />
 
@@ -34,7 +28,7 @@
 
 <h3 id="equal-width-multi-row">Equal-width multi-row</h3>
 
-<p>Create equal-width columns that span multiple rows by inserting a <code class="highlighter-rouge">.w-100</code> where you want the columns to break to a new line. Make the breaks responsive by mixing the <code class="highlighter-rouge">.w-100</code> with some <a href="/docs/4.3/utilities/display/">responsive display utilities</a>.</p>
+<p>Create equal-width columns that span multiple rows by inserting a <code class="highlighter-rouge">.w-100</code> where you want the columns to break to a new line. Make the breaks responsive by mixing the <code class="highlighter-rouge">.w-100</code> with some <BootstrapDocLink href="/docs/4.3/utilities/display/">responsive display utilities</BootstrapDocLink>.</p>
 
 <Example File=@typeof(EqualWidthMultiRow) />
 
@@ -100,7 +94,7 @@
 
 <Example File=@typeof(ColumnBreaks1) />
 
-<p>You may also apply this break at specific breakpoints with our <a href="/docs/4.3/utilities/display/">responsive display utilities</a>.</p>
+<p>You may also apply this break at specific breakpoints with our <BootstrapDocLink href="/docs/4.3/utilities/display/">responsive display utilities</BootstrapDocLink>.</p>
 
 <Example File=@typeof(ColumnBreaks2) />
 
@@ -118,7 +112,7 @@
 
 <h3 id="offsetting-columns">Offsetting columns</h3>
 
-<p>You can offset grid columns in two ways: our responsive <code class="highlighter-rouge">Offset="*"</code> grid options and our <a href="/docs/4.3/utilities/spacing/">margin utilities</a>. Grid options are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.</p>
+<p>You can offset grid columns in two ways: our responsive <code class="highlighter-rouge">Offset="*"</code> grid options and our <NavLink href="/docs/4.3/utilities/spacing/">margin utilities</NavLink>. Grid options are sized to match columns while margins are more useful for quick layouts where the width of the offset is variable.</p>
 
 <h4 id="offset-classes">Offset classes</h4>
 
@@ -126,7 +120,7 @@
 
 <Example File=@typeof(OffsetClasses1) />
 
-<p>In addition to column clearing at responsive breakpoints, you may need to reset offsets. See this in action in <a href="/docs/4.3/examples/grid/">the grid example</a>.</p>
+<p>In addition to column clearing at responsive breakpoints, you may need to reset offsets. See this in action in <BootstrapDocLink href="/docs/4.3/examples/grid/">the grid example</BootstrapDocLink>.</p>
 
 <Example File=@typeof(OffsetClasses2) />
 

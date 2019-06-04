@@ -1,8 +1,8 @@
-﻿@using Microsoft.JSInterop;
-@inject IJSRuntime jsRuntime;
+﻿@inject IJSRuntime jsRuntime
+@inject IExampleComponentRepository exampleRepo
 
 <div class="example border rounded-sm @Class" id=@Id>
-    <div class="example-output py-3 bg-light">@ExampleOutput</div>
+    <div class="example-output py-3 bg-light@(ShowSourcesOnly ? " d-none" : "")">@ExampleOutput</div>
     <Container Type="fluid">
         <Row NoGutters="true">
             <Column Span="sm-12 | lg-6">
@@ -36,6 +36,9 @@
     private Type File { get; set; }
 
     [Parameter]
+    private bool ShowSourcesOnly { get; set; }
+
+    [Parameter]
     private string Class { get; set; } = string.Empty;
 
     private string Id => File.FullName.Replace(".", "");
@@ -43,24 +46,13 @@
     private string ExampleSource { get; set; }
     private string BootstrapSource { get; set; }
 
-    protected override void OnInit()
+    protected override async Task OnInitAsync()
     {
-        base.OnInit();
-
-        // TODO: Extract logic out in cachable service that is injectable
-        var assm = System.Reflection.Assembly.GetExecutingAssembly();
-        using (var stream = assm.GetManifestResourceStream($"{File.FullName}.razor"))
-        {
-            using (var reader = new System.IO.StreamReader(stream))
-            {
-                ExampleSource = reader.ReadToEnd();
-            }
-        }
+        ExampleSource = await exampleRepo.GetExampleAsync(File.FullName);
     }
 
     protected override async Task OnAfterRenderAsync()
     {
         await jsRuntime.InvokeAsync<string>("setExampleBootstrapHtml", Id);
-        await base.OnAfterRenderAsync();
     }
 }
