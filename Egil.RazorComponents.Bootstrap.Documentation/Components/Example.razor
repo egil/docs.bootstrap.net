@@ -2,8 +2,8 @@
 @inject IExampleComponentRepository exampleRepo
 
 <div class="example border rounded-sm @Class" id=@Id>
-    <div class="example-output py-3 bg-light@(ShowSourcesOnly ? " d-none" : "")">@ExampleOutput</div>
-    <Container Type="fluid">
+    <div class="example-output p-3 bg-light@(ShowSourcesOnly ? " d-none" : "")">@ExampleOutput</div>
+    <Container IsFluid="true">
         <Row NoGutters="true">
             <Column Span="sm-12 | lg-6">
                 <div class="example-code-bootstrap-dotnet">
@@ -13,7 +13,7 @@
                     <strong><em>BootstrapDotNet Razor</em></strong> code sample
                 </p>
             </Column>
-            <Column Span="sm-12 | lg-6" AdditionalCssClasses="border-top-sm border-left-lg">
+            <Column Span="sm-12 | lg-6" class="border-top-sm border-left-lg">
                 <div class="example-code-bootstrap">
                     <pre class=""><code class="language-html"></code></pre>
                 </div>

@@ -28,6 +28,10 @@
     padding: 1rem;
 }
 
+.example-output > :last-child {
+    margin-bottom: 0;
+}
+
 .example-code-name {
     font-size: 0.7rem;
 }
@@ -43,4 +47,3 @@
         border-left: 1px solid #dee2e6 !important;
     }
 }
-
